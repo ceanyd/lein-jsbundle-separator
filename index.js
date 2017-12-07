@@ -230,7 +230,7 @@ if(process.argv.length < 3 || process.argv.filter(arg => arg === 'ios' || arg ==
     if (i < 2) return;
     if(param === 'android' || param === 'ios') {
       lein(param);
-      deleteFolderRecursive(`../../${param ===  'ios' ? 'android' : 'ios'}_prod_src`);
+      deleteFolderRecursive(resolve(`${param ===  'ios' ? 'android' : 'ios'}_prod_src`));
       main(param);
     } else {
       wrongParams.push(param);
