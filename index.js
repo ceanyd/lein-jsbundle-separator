@@ -1,6 +1,7 @@
 'use strict';
 const fs = require('fs');
 const child_process = require('child_process');
+const resolve = require('path').resolve;
 
 const replace = (str, subStr, cutStart, cutEnd) => {
   return str.substr(0, cutStart) + subStr + str.substr(cutEnd + 1);
@@ -195,16 +196,15 @@ const create = (data, dir, firstIndex = 0) => {
 };
 
 const main = (param) => {
-  const file = `index.${param}.js`;
-  const filePath = `../../index.${param}.js`;
+  const file = resolve(`index.${param}.js`);
   console.log(`Start parse file ${file} on modules...`);
   const log = `Dividing for ${file} was ended`;
   console.time(log);
-  const data = fs.readFileSync(`${filePath}`, 'utf8');
-  const dirPath = `../../${param}_prod_src`;
-  deleteFolderRecursive(dirPath);
-  const newData = create(data, dirPath, 450);
-  fs.writeFileSync(filePath, newData);
+  const data = fs.readFileSync(file, 'utf8');
+  const path = resolve(`./${param}_prod_src`);
+  deleteFolderRecursive(path);
+  const newData = create(data, path, 450);
+  fs.writeFileSync(file, newData);
   console.timeEnd(log);
   console.log('------------');
 };
