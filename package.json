@@ -1,0 +1,17 @@
+{
+	"name": "lein-jsbundle-separator",
+	"version": "0.0.1",
+	"description": "Solve problem with JS heap out of memory in RN in prod build (for me O_o)",
+	"main": "index",
+	"author": {
+		"name": "ceanyd",
+		"email": "poythn@gmail.com",
+		"url": "https://github.com/ceanyd/lein-jsbundle-separator"
+	},
+	"license": "MIT",
+	"contributors": [],
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:ceanyd/lein-jsbundle-separator.git"
+	}
+}
