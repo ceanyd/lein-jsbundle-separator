@@ -203,7 +203,7 @@ const main = (param) => {
   const data = fs.readFileSync(file, 'utf8');
   const path = resolve(`./${param}_prod_src`);
   deleteFolderRecursive(path);
-  const newData = create(data, path, 450);
+  const newData = create(data, path, 450); // TODO: from 450 symbol parse started and to the end. Add to args.
   fs.writeFileSync(file, newData);
   console.timeEnd(log);
   console.log('------------');
