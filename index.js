@@ -168,14 +168,14 @@ const create = (data, dir, firstIndex = 0) => {
 
   const createNestedDirs = (_branchObj, _dir, defaultName = '') => {
     const nestedDir = _dir + (defaultName ? '/' + defaultName : '');
-    const nestedDirArr = nestedDir.split('/');
+    // const nestedDirArr = nestedDir.split('/');
     let backDir = '';
 
-    if (nestedDirArr.length > 2) backDir = nestedDirArr.reduce((acc, next, _ind) => {
-      if (_ind < 2) return acc;
-      return acc + '../';
-    }, backDir);
-    else backDir = './';
+    // if (nestedDirArr.length > 2) backDir = nestedDirArr.reduce((acc, next, _ind) => {
+    //   if (_ind < 2) return acc;
+    //   return acc + '../';
+    // }, backDir);
+    // else backDir = './';
 
     createNewDirectory(nestedDir);
     const branchObjKeys = Object.keys(_branchObj);
